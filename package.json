@@ -1,0 +1,63 @@
+{
+  "name": "vscode-custom-plugin",
+  "displayName": "vscode-custom-plugin",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.81.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:getFileState"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "vscodeCustomPlugin.spliceWithUnderscore",
+        "title": "Splice with underscore"
+      },
+      {
+        "command": "vscodeCustomPlugin.spliceWithUnderscoreAndLowerCase",
+        "title": "Splice with underscore and to lower case"
+      },
+      {
+        "command": "getFileState",
+        "title": "File State"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "when": "editorFocus",
+          "command": "getFileState",
+          "group": "navigation"
+        }
+      ],
+      "explorer/context": [
+        {
+          "command": "getFileState",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "node ./test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.81.0",
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "20.2.5",
+    "eslint": "^8.41.0",
+    "glob": "^8.1.0",
+    "mocha": "^10.2.0",
+    "typescript": "^5.1.3",
+    "@vscode/test-electron": "^2.3.2"
+  }
+}
