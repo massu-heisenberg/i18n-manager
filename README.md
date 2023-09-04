@@ -20,3 +20,8 @@ Initial release of vscode custom plugin
 * [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
 
 **Enjoy!**
+
+## Build Version
+```
+vsce package
+```
