@@ -1,8 +1,11 @@
 {
-  "name": "vscode-custom-plugin",
-  "displayName": "vscode-custom-plugin",
-  "description": "",
+  "name": "massu",
+  "displayName": "massu",
+  "description": "vscode custom plugin by massu heisenberg",
   "version": "0.0.1",
+  "author": {
+    "name": "massu heisenberg"
+  },
   "engines": {
     "vscode": "^1.81.0"
   },
@@ -10,9 +13,14 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:getFileState"
+    "onLanguage:html",
+    "onLanguage:javascript",
+    "onLanguage:javascriptreact",
+    "onLanguage:typescript",
+    "onLanguage:typescriptreact",
+    "onLanguage:vue"
   ],
-  "main": "./extension.js",
+  "main": "./src/client/extension.js",
   "contributes": {
     "commands": [
       {
@@ -42,6 +50,64 @@
           "group": "navigation"
         }
       ]
+    },
+    "configuration": {
+      "title": "CustomDotLog",
+      "properties": {
+        "customDotLog.config": {
+          "type": "array",
+          "description": "Customize how to log the result.",
+          "default": [
+            {
+              "trigger": "log",
+              "description": "custom dot log for console.log()",
+              "format": "console.log"
+            },
+            {
+              "trigger": "warn",
+              "description": "custom dot log for console.warn()",
+              "format": "console.warn"
+            },
+            {
+              "trigger": "error",
+              "description": "custom dot log for console.error()",
+              "format": "console.error"
+            },
+            {
+              "trigger": "table",
+              "description": "custom dot log for console.table()",
+              "format": "console.table"
+            },
+            {
+              "trigger": "info",
+              "description": "custom dot log for console.info()",
+              "format": "console.info"
+            },
+            {
+              "trigger": "dir",
+              "description": "custom dot log for console.dir()",
+              "format": "console.dir"
+            }
+          ],
+          "items": {
+            "type": "object",
+            "additionalProperties": {
+              "trigger": {
+                "type": "string",
+                "required": true
+              },
+              "description": {
+                "type": "string",
+                "required": true
+              },
+              "format": {
+                "type": "string",
+                "required": true
+              }
+            }
+          }
+        }
+      }
     }
   },
   "scripts": {
