@@ -99,9 +99,9 @@ class CustomDotLog {
         if (matchFlag === "var") {
           //  only console.log(xxx)
           if (config.hideName === true) {
-            insertVal = `${config.format}(${key})`;
+            insertVal = `${config.format}(${key});`;
           } else {
-            insertVal = `${config.format}(${quote}${prefix}${key}${suffix}${quote}, ${key})`;
+            insertVal = `${config.format}(${quote}${prefix}${key}${suffix}${quote}, ${key});`;
           }
         }
         // if key is string format like console.log("xxx")
