@@ -2,10 +2,15 @@
   "name": "massu",
   "displayName": "massu",
   "description": "vscode custom plugin by massu heisenberg",
-  "version": "0.0.1",
+  "version": "0.0.2",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/massu-heisenberg/massu-vscode.git"
+  },
   "author": {
     "name": "massu heisenberg"
   },
+  "publisher": "massu",
   "engines": {
     "vscode": "^1.81.0"
   },

@@ -106,7 +106,7 @@ class CustomDotLog {
         }
         // if key is string format like console.log("xxx")
         if (matchFlag === "str") {
-          insertVal = `${config.format}(${quote}${key}${quote})`;
+          insertVal = `${config.format}(${quote}${key}${quote});`;
         }
 
         edit.insert(position.with(undefined, index), insertVal);
