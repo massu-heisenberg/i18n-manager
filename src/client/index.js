@@ -1,19 +1,19 @@
-const commandOfGetFileState = require("./getFileState");
 const {
   spliceWithUnderscore,
   spliceWithUnderscoreAndLowerCase,
-} = require("./textHandler");
+} = require("./text/splice-with-underscore");
 const { log } = require("../utils/log");
-const { customDotLog, customDotLogCommander } = require("./customDotLog");
+const { customDotLog, customDotLogCommander } = require("./log/dot");
+const i18nManagerDetect = require("./i18n-manager/detect");
 
 function activate(context) {
-  log("VS Code Custom Plugin has been active!");
+  log("massu vscode has been active!");
   context.subscriptions.push(
-    commandOfGetFileState,
     spliceWithUnderscore,
     spliceWithUnderscoreAndLowerCase,
     customDotLog,
-    customDotLogCommander
+    customDotLogCommander,
+    i18nManagerDetect
   );
 }
 

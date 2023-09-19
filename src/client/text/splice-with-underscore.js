@@ -1,5 +1,5 @@
 const vscode = require("vscode");
-const { SpecialCharacters } = require("../utils/constants");
+const { SpecialCharacters } = require("../../utils/constants");
 module.exports = {
   spliceWithUnderscore: vscode.commands.registerCommand(
     "vscodeCustomPlugin.spliceWithUnderscore",

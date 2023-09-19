@@ -25,7 +25,7 @@
     "onLanguage:typescriptreact",
     "onLanguage:vue"
   ],
-  "main": "./src/client/extension.js",
+  "main": "./src/client/index.js",
   "contributes": {
     "commands": [
       {
@@ -37,25 +37,29 @@
         "title": "Splice with underscore and to lower case"
       },
       {
-        "command": "getFileState",
-        "title": "File State"
+        "command": "i18nManager.detect",
+        "title": "Detect"
       }
     ],
     "menus": {
-      "editor/context": [
-        {
-          "when": "editorFocus",
-          "command": "getFileState",
-          "group": "navigation"
-        }
-      ],
       "explorer/context": [
         {
-          "command": "getFileState",
-          "group": "navigation"
+          "group": "navigation",
+          "submenu": "i18nManager/detect"
+        }
+      ],
+      "i18nManager/detect": [
+        {
+          "command": "i18nManager.detect"
         }
       ]
     },
+    "submenus": [
+      {
+        "id": "i18nManager/detect",
+        "label": "I18n Manager"
+      }
+    ],
     "configuration": {
       "title": "CustomDotLog",
       "properties": {
@@ -129,6 +133,8 @@
     "glob": "^8.1.0",
     "mocha": "^10.2.0",
     "typescript": "^5.1.3",
-    "@vscode/test-electron": "^2.3.2"
+    "@vscode/test-electron": "^2.3.2",
+    "chalk": "^4.0.0",
+    "fs-extra": "^11.1.1"
   }
 }
