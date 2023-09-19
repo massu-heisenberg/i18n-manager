@@ -1,6 +1,6 @@
 {
-  "name": "massu",
-  "displayName": "massu",
+  "name": "massu-vscode",
+  "displayName": "massu-vscode",
   "description": "vscode custom plugin by massu heisenberg",
   "version": "0.0.2",
   "repository": {
