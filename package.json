@@ -2,7 +2,7 @@
   "name": "massu-vscode",
   "displayName": "massu-vscode",
   "description": "vscode custom plugin by massu heisenberg",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "repository": {
     "type": "git",
     "url": "https://github.com/massu-heisenberg/massu-vscode.git"
